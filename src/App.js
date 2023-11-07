@@ -8,7 +8,7 @@ function App() {
   let [allnewsdata, setallnewsdata] = useState([]);
 
   const getallnewsdata = async () => {
-    let { data } = await axios.get(`${urls.api_url}`);
+    let { data } = await axios.get(`${urls.everything}/cnn.json`);
     setallnewsdata(data);
   };
 
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-     <DrawerAppBar getTopHeadlines={getTopHeadlines}/>
+     <DrawerAppBar getTopHeadlines={getTopHeadlines} getallnewsdata={getallnewsdata}/>
       <ActionAreaCard allnewsdata={allnewsdata}/>
     </div>
   );

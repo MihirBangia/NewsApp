@@ -8,10 +8,12 @@ import { CardActionArea } from "@mui/material"
 export default function ActionAreaCard(props) {
   let carddata = props.allnewsdata.articles;
   return (
-      carddata?.map((item, index) => {
+    <div className="App2">
+      {carddata?.map((item, index) => {
         return (
-          <Card sx={{maxWidth: 345, height:400, margin:2 }}>
-            <CardActionArea>
+         
+          <Card sx={{maxWidth: 345, height:400, margin:2 }} >
+            <CardActionArea onClick={()=>window.open(item.url, '_blank')}>
               <CardMedia
                 component="img"
                 height="140"
@@ -29,7 +31,7 @@ export default function ActionAreaCard(props) {
             </CardActionArea>
             </Card>
         );
-      })
-    
+      })}
+    </div>
   );
 }

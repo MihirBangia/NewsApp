@@ -4,7 +4,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material"
-import CardSkeletonList from "../categories/skeleton/Cardskeletonlist";
+import CardSkeletonList from "../skeleton/Cardskeletonlist";
 
 export default function ActionAreaCard(props) {
   let carddata = props.allnewsdata.articles;

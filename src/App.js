@@ -35,11 +35,12 @@ function App() {
   }
 
   const getallnewsdata = async () => {
+    setloading(true)
     let { data } = await axios.get(`${urls.everything}/cnn.json`);
     setallnewsdata(data);
     setTimeout(() => {
       setloading(false);
-    }, 400);
+    }, 600);
   };
 
   const getTopHeadlines = async (category, country) =>{
@@ -48,7 +49,7 @@ function App() {
     setallnewsdata(data);
     setTimeout(() => {
       setloading(false);
-    }, 400);
+    }, 600);
   }
 
   useEffect(() => {

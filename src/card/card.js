@@ -8,6 +8,10 @@ import CardSkeletonList from "../skeleton/Cardskeletonlist";
 
 export default function ActionAreaCard(props) {
   let carddata = props.allnewsdata.articles;
+
+  function truncate(source, size) {
+    return source.length > size ? source.slice(0, size - 1) + "…" : source;
+  }
   return (
     <div className="App2">
       {props.loading==false?
@@ -20,10 +24,10 @@ export default function ActionAreaCard(props) {
                 height="140"
                 image={item.urlToImage}
                 alt="green iguana"
-              />
+                />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {item.title}
+                  {truncate(item.title,30)}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {item.content}
